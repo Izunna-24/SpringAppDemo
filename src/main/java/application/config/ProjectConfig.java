@@ -10,19 +10,18 @@ import org.springframework.context.annotation.Primary;
 import java.math.BigDecimal;
 
 @Configuration
-//@ComponentScan(basePackages = "application")
+@ComponentScan(basePackages = "application")
 public class ProjectConfig {
 
     @Bean
     @Primary
-    public HelloService helloService1(){
-        HelloService helloService = new HelloService();
+    public HelloService helloService(){
         //System.out.println(("HelloService Bean in context -->" + helloService));
-        return helloService;
+        return new HelloService();
     }
 
     @Bean
-    public HelloService helloService2(){
-        return new HelloService();
+    public BigDecimal bigDecimal(){
+        return new BigDecimal(200);
     }
 }
